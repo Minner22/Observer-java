@@ -7,14 +7,12 @@ import java.util.logging.SimpleFormatter;
 
 public class LogCreator implements EventListener {
 
-    private final String path;
     Logger logger = Logger.getLogger("log");
     FileHandler fileHandler;
 
     public LogCreator (String path) {
-       this.path = path;
         try {
-            fileHandler = new FileHandler(this.path);
+            fileHandler = new FileHandler(path);
             logger.addHandler(fileHandler);
             SimpleFormatter formatter = new SimpleFormatter();
             fileHandler.setFormatter(formatter);

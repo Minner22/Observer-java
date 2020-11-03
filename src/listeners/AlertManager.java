@@ -6,8 +6,8 @@ import java.util.Map;
 public class AlertManager implements EventListener {
 
     private int loginCounter;
-    private String adminContact;
-    private LinkedHashMap<Integer, String> last5 = new LinkedHashMap<>() {
+    private final String adminContact;
+    private final LinkedHashMap<Integer, String> last5 = new LinkedHashMap<>() {
         @Override
         protected boolean removeEldestEntry(Map.Entry<Integer, String> eldest) {
             return this.size() > 5;
